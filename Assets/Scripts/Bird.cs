@@ -11,13 +11,16 @@ public class Bird : MonoBehaviour
 
     private Camera mainCamera;
     private ScoreManager scoreManager;
+    public Animator animStrike;
 
     private float randomXDirection;
     private float randomYDirection;
+     
 
     private void Start()
     {
         scoreManager = FindObjectOfType<ScoreManager>();
+        animStrike = GameObject.FindWithTag("StrikeAnim");
         mainCamera = Camera.main;
 
         // Set a random initial position within the camera view
@@ -70,6 +73,7 @@ public class Bird : MonoBehaviour
         {
             // Add score and destroy the bird
             scoreManager.AddScore(pointValue);
+            
             Destroy(gameObject);
         }
     }

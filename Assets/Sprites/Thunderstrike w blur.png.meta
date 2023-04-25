@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 788749c3819d23a46b36f7fb3d9378a7
+guid: 07e562885ef53564fab527dd5ef7c099
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -114,6 +114,18 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -137,92 +149,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: indomay237_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1736.5
-        width: 1736.3334
-        height: 1736.5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: df3af6c80cdc1424696b6bcc72513536
-      internalID: -1863692016
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: indomay237_1
-      rect:
-        serializedVersion: 2
-        x: 1736
-        y: 1736.5
-        width: 1736.3334
-        height: 1736.5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e7933a281dac76546a4e8982dc68808b
-      internalID: -467574588
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: indomay237_2
-      rect:
-        serializedVersion: 2
-        x: 3472
-        y: 1736.5
-        width: 1736.3334
-        height: 1736.5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1cec60e8bc065dc48adb67954bb67eba
-      internalID: 494149786
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: indomay237_3
+      name: Thunderstrike w blur_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1709
-        height: 1736
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -230,20 +167,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c968f4ded5fab64594fa9acccce2590
-      internalID: 1506612065
+      spriteID: 691bce9917573b04aa5f5dfa382d7f95
+      internalID: -494597514
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: indomay237_4
+      name: Thunderstrike w blur_1
       rect:
         serializedVersion: 2
-        x: 1717
+        x: 64
         y: 0
-        width: 1759
-        height: 1736
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -251,20 +188,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aee05ede392145b499fab550b1a0e6b3
-      internalID: -408381873
+      spriteID: b3769e1e46e7cf044ae60b5816d72e7a
+      internalID: -134435618
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: indomay237_5
+      name: Thunderstrike w blur_2
       rect:
         serializedVersion: 2
-        x: 3472
-        y: 0.5
-        width: 1736.3334
-        height: 1736.5
+        x: 128
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -272,8 +209,197 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed18d56c56b0c6c45b3225992700096f
-      internalID: 718150200
+      spriteID: 57d5158e88468554fa1ba2a0831c2796
+      internalID: -364919238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunderstrike w blur_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcb44cab0b3c660478e65498643836f0
+      internalID: 241947030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunderstrike w blur_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93f2a453e9379a84f9d5f85e93f59ab2
+      internalID: 153876249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunderstrike w blur_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87756d4f73a3a8b4ab8a2df1e6c9db2d
+      internalID: 1824292203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunderstrike w blur_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 924a020c31bf1994ebd8af42e7cd9de3
+      internalID: -2049203250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunderstrike w blur_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49f0e5934edd2d346beceb5b75aa68bd
+      internalID: 1784970761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunderstrike w blur_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bf0d9fd73ec53943a7e68f83d4c6528
+      internalID: 334893591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunderstrike w blur_9
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97c4725206859b54781b8d03302dfe54
+      internalID: -2085119923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunderstrike w blur_10
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14377869c6ccaa34580cd6cdde97ca5d
+      internalID: -1958556699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunderstrike w blur_11
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2d84856c9de90e4690bc7a29f4f4b67
+      internalID: 1039119586
       vertices: []
       indices: 
       edges: []
@@ -289,12 +415,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      indomay237_0: -1863692016
-      indomay237_1: -467574588
-      indomay237_2: 494149786
-      indomay237_3: 1506612065
-      indomay237_4: -408381873
-      indomay237_5: 718150200
+      Thunderstrike w blur_0: -494597514
+      Thunderstrike w blur_1: -134435618
+      Thunderstrike w blur_10: -1958556699
+      Thunderstrike w blur_11: 1039119586
+      Thunderstrike w blur_2: -364919238
+      Thunderstrike w blur_3: 241947030
+      Thunderstrike w blur_4: 153876249
+      Thunderstrike w blur_5: 1824292203
+      Thunderstrike w blur_6: -2049203250
+      Thunderstrike w blur_7: 1784970761
+      Thunderstrike w blur_8: 334893591
+      Thunderstrike w blur_9: -2085119923
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

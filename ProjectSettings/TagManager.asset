@@ -6,6 +6,7 @@ TagManager:
   tags:
   - HighScores
   - ScoreText
+  - StrikeAnim
   layers:
   - Default
   - TransparentFX
