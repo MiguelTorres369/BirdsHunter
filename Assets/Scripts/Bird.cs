@@ -8,19 +8,20 @@ public class Bird : MonoBehaviour
 {
     public float speed = 5f;
     public int pointValue = 100;
+    public Animator strikeAnim;
 
     private Camera mainCamera;
     private ScoreManager scoreManager;
-    public Animator animStrike;
+    private HighScoreManager highScore;
 
     private float randomXDirection;
     private float randomYDirection;
-     
 
     private void Start()
     {
         scoreManager = FindObjectOfType<ScoreManager>();
-        animStrike = GameObject.FindWithTag("StrikeAnim");
+        highScore = FindObjectOfType<HighScoreManager>();
+        strikeAnim = GetComponent<Animator>();
         mainCamera = Camera.main;
 
         // Set a random initial position within the camera view
@@ -36,8 +37,8 @@ public class Bird : MonoBehaviour
         scale.x = Mathf.Abs(scale.x) * Mathf.Sign(randomXDirection);
         transform.localScale = scale;
 
-        // Destroy the bird after 10 seconds
-        Destroy(gameObject, 10f);
+        // Destroy the bird after 5 seconds
+            Destroy(gameObject, 5f);
     }
 
     private void Update()
@@ -62,39 +63,29 @@ public class Bird : MonoBehaviour
         }
 
         // Check for touch input
-    if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
-    {
-        Vector3 touchPos = Input.GetTouch(0).position;
-        touchPos.z = 10f; // Set the touch position at the same depth as the bird
-        Vector3 worldPos = mainCamera.ScreenToWorldPoint(touchPos);
-
-        // Check if the touch position intersects with the bird's collider
-        if (GetComponent<Collider2D>().OverlapPoint(worldPos))
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
-            // Add score and destroy the bird
-            scoreManager.AddScore(pointValue);
-            
-            Destroy(gameObject);
+            Vector3 touchPos = Input.GetTouch(0).position;
+            touchPos.z = 10f; // Set the touch position at the same depth as the bird
+            Vector3 worldPos = mainCamera.ScreenToWorldPoint(touchPos);
+
+            // Check if the touch position intersects with the bird's collider
+            if (GetComponent<Collider2D>().OverlapPoint(worldPos))
+            {
+                // Add score and destroy the bird
+                scoreManager.AddScore(pointValue);
+                highScore.AddScoreToHighScores(scoreManager.SaveScore());
+                strikeAnim.Play("Strike");
+                Destroy(gameObject, 0.3f);
+            }
         }
     }
-
-
-
-            // Check for input
-        if (Input.GetMouseButtonDown(0))
-        {
-            // Check if the mouse click is within the collider of the bird
-            Vector3 mousePos = Input.mousePosition;
-            mousePos.z = 10f;
-            Vector3 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
-            Collider2D hitCollider = Physics2D.OverlapPoint(worldPos);
-            if (hitCollider != null && hitCollider.gameObject == gameObject)
-            {
-                // The bird was clicked on
-                scoreManager.AddScore(pointValue);
-                Destroy(gameObject);
-            }
-
-}
-}
+         public void OnMouseDown()
+    {
+        strikeAnim.Play("Strike");
+        scoreManager.AddScore(pointValue);
+        highScore.AddScoreToHighScores(scoreManager.SaveScore());
+        Destroy(gameObject, 0.3f);
+    }
+             
 }
