@@ -13,6 +13,7 @@ public class Bird : MonoBehaviour
     private Camera mainCamera;
     private ScoreManager scoreManager;
     private HighScoreManager highScore;
+    [SerializeField] private ParticleSystem birdExpolision = default;
 
     private float randomXDirection;
     private float randomYDirection;
@@ -37,8 +38,9 @@ public class Bird : MonoBehaviour
         scale.x = Mathf.Abs(scale.x) * Mathf.Sign(randomXDirection);
         transform.localScale = scale;
 
-        // Destroy the bird after 5 seconds
-            Destroy(gameObject, 5f);
+        // Destroy the bird after 6 seconds
+        Destroy(gameObject, 6f);
+
     }
 
     private void Update()
@@ -72,20 +74,51 @@ public class Bird : MonoBehaviour
             // Check if the touch position intersects with the bird's collider
             if (GetComponent<Collider2D>().OverlapPoint(worldPos))
             {
-                // Add score and destroy the bird
-                scoreManager.AddScore(pointValue);
-                highScore.AddScoreToHighScores(scoreManager.SaveScore());
-                strikeAnim.Play("Strike");
-                Destroy(gameObject, 0.3f);
+                try
+                {
+                    if (scoreManager != null)
+                    {
+                        strikeAnim.Play("Strike");
+                        birdExpolision.Play();
+                        scoreManager.AddScore(pointValue);
+
+                        if (highScore != null)
+                        {
+                            highScore.AddScoreToHighScores(scoreManager.SaveCurrentScore());
+                        }
+
+                        Destroy(gameObject, 0.3f);
+                    }
+                }
+                    catch (System.NullReferenceException ex)
+                    {
+                        Debug.LogError("Error: " + ex.Message);
+                    }
             }
         }
     }
-         public void OnMouseDown()
+
+   public void OnMouseDown()
+{
+    try
     {
-        strikeAnim.Play("Strike");
-        scoreManager.AddScore(pointValue);
-        highScore.AddScoreToHighScores(scoreManager.SaveScore());
-        Destroy(gameObject, 0.3f);
+        if (scoreManager != null)
+        {
+            strikeAnim.Play("Strike");
+            birdExpolision.Play();
+            scoreManager.AddScore(pointValue);
+
+            if (highScore != null)
+            {
+                highScore.AddScoreToHighScores(scoreManager.SaveCurrentScore());
+            }
+
+            Destroy(gameObject, 0.3f);
+        }
     }
-             
+    catch (System.NullReferenceException ex)
+    {
+        Debug.LogError("Error: " + ex.Message);
+    }
+}
 }

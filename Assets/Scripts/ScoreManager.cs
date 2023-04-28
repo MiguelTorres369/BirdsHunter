@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
     private int score;
     private static ScoreManager instance;
+
     public static ScoreManager Instance
     {
         get { return instance; }
@@ -19,10 +20,13 @@ public class ScoreManager : MonoBehaviour
         instance = this;
     }
 
-    private void Start()
+        public void StartNewGame()
     {
-        LoadScore();
-        UpdateScoreText();
+        // Clear the PlayerPrefs to reset the score
+        PlayerPrefs.DeleteKey("Score");
+
+        // Load the scene for the new game
+        SceneManager.LoadScene("Level001");
     }
 
     private void UpdateScoreText()
@@ -34,47 +38,27 @@ public class ScoreManager : MonoBehaviour
     {
         score += points;
         UpdateScoreText();
-    }
 
-    public int SaveScore()
-{
-    int bestScore1 = PlayerPrefs.GetInt("BestScore1", 0);
-    int bestScore2 = PlayerPrefs.GetInt("BestScore2", 0);
-    int bestScore3 = PlayerPrefs.GetInt("BestScore3", 0);
-    int savedScore = 0;
-
-    if (score > bestScore1)
-    {
-        PlayerPrefs.SetInt("BestScore3", bestScore2);
-        PlayerPrefs.SetInt("BestScore2", bestScore1);
-        PlayerPrefs.SetInt("BestScore1", score);
-        savedScore = score;
+        SaveCurrentScore();
     }
-    else if (score > bestScore2)
-    {
-        PlayerPrefs.SetInt("BestScore3", bestScore2);
-        PlayerPrefs.SetInt("BestScore2", score);
-        savedScore = score;
-    }
-    else if (score > bestScore3)
-    {
-        PlayerPrefs.SetInt("BestScore3", score);
-        savedScore = score;
-    }
-
-    PlayerPrefs.Save();
-
-    return savedScore;
-}
 
     public void LoadScore()
     {
-        score = PlayerPrefs.GetInt("Score", 0);
+        score = PlayerPrefs.GetInt("HighScore");
     }
 
-    public void SaveCurrentScore()
+    public int SaveCurrentScore()
     {
-        PlayerPrefs.SetInt("Score", score);
-        PlayerPrefs.Save();
+        int currentHighScore = PlayerPrefs.GetInt("HighScore");
+        if (score > currentHighScore)
+        {
+            PlayerPrefs.SetInt("HighScore", score);
+            PlayerPrefs.Save();
+            return score;
+        }
+        else
+        {
+            return currentHighScore;
+        }
     }
 }

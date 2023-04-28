@@ -2,24 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
-public class ReturnButton : MonoBehaviour
+public class ReturnButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     private float touchTime;
+    private ScoreManager scoreManager;
 
-    public void Update()
+    private void Awake()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            touchTime = Time.time;
-        }
+        scoreManager = FindObjectOfType<ScoreManager>();
+    }
 
-        if (Input.GetMouseButtonUp(0))
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        touchTime = Time.time;
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        if (Time.time - touchTime > 1f)
         {
-            if (Time.time - touchTime > 3f)
-            {
-                SceneManager.LoadScene("StartMenu");
-            }
+            scoreManager.SaveCurrentScore(); // Save the current score
+            SceneManager.LoadScene("StartMenu");
         }
     }
 }
